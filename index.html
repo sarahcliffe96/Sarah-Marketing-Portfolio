@@ -3,145 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah Cliffe | Marketing Portfolio</title>
+    <title>Sarah Cliffe | Marketing Professional Portfolio</title>
     <style>
-        :root { --bg: #ffffff; --text: #000000; --gray: #888; --light: #f9f9f9; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.7; scroll-behavior: smooth; }
+        :root { --bg: #ffffff; --text: #000000; --accent: #666; --border: #000; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
         
         /* Navigation */
-        nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.9); border-bottom: 1px solid #eee; padding: 20px 10%; display: flex; justify-content: space-between; z-index: 1000; }
-        nav a { text-decoration: none; color: var(--text); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-left: 20px; font-weight: 600; }
+        nav { position: fixed; width: 100%; background: #fff; border-bottom: 1px solid #000; z-index: 100; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        nav .logo { font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: #000; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
 
-        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; border-bottom: 1px solid #000; }
-        header h1 { font-size: clamp(3rem, 10vw, 6rem); line-height: 1; text-transform: uppercase; letter-spacing: -2px; }
-        header p { font-size: 1.2rem; color: var(--gray); text-transform: uppercase; letter-spacing: 2px; }
+        /* Sections */
+        section { padding: 100px 5% 60px; border-bottom: 1px solid #eee; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        h1 { font-size: clamp(3rem, 10vw, 5rem); line-height: 0.9; text-transform: uppercase; margin-bottom: 20px; font-weight: 900; }
+        h2 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: 30px; border-bottom: 4px solid #000; display: inline-block; padding-bottom: 5px; }
+        h3 { text-transform: uppercase; font-size: 1rem; margin: 25px 0 10px; letter-spacing: 1px; }
 
-        section { padding: 100px 10%; border-bottom: 1px solid #eee; }
-        .section-label { color: var(--gray); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: block; }
-        h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 40px; }
+        /* Hero */
+        #hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .hero-sub { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); }
 
-        /* Grid Layouts */
-        .case-study-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
-        .stat-box { border: 1px solid #000; padding: 30px; margin-bottom: 20px; }
-        .stat-number { font-size: 2.5rem; font-weight: 800; display: block; }
+        /* Grid System */
+        .row { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+        .col { flex: 1; min-width: 300px; }
 
-        /* Data Table */
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 0.9rem; }
-        .data-table th { text-align: left; border-bottom: 2px solid #000; padding: 10px; text-transform: uppercase; }
-        .data-table td { padding: 10px; border-bottom: 1px solid #eee; }
+        /* Lists and Data */
+        .skill-list { display: flex; flex-wrap: wrap; list-style: none; gap: 10px; margin-top: 15px; }
+        .skill-list li { border: 1px solid #000; padding: 5px 12px; font-size: 0.8rem; text-transform: uppercase; }
+        
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 20px; }
+        .stat-item { border-left: 3px solid #000; padding-left: 15px; }
+        .stat-val { font-size: 2rem; font-weight: 900; display: block; }
+        .stat-label { font-size: 0.7rem; text-transform: uppercase; color: var(--accent); }
 
-        .skills-tag { display: inline-block; border: 1px solid #000; padding: 5px 15px; margin: 0 5px 10px 0; font-size: 0.8rem; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85rem; }
+        th { text-align: left; border-bottom: 2px solid #000; padding: 10px; text-transform: uppercase; }
+        td { border-bottom: 1px solid #eee; padding: 10px; }
 
-        footer { padding: 100px 10%; background: #000; color: #fff; text-align: center; }
-        footer a { color: #fff; font-size: 1.5rem; text-decoration: none; border-bottom: 1px solid #fff; }
+        /* Case Study Blocks */
+        .case-block { background: #fafafa; padding: 40px; margin-bottom: 30px; border: 1px solid #eee; }
 
-        @media (max-width: 768px) { .case-study-grid { grid-template-columns: 1fr; } nav { display: none; } }
+        footer { background: #000; color: #fff; padding: 80px 5%; text-align: center; }
+        footer a { color: #fff; text-decoration: none; font-size: 1.5rem; font-weight: bold; }
+
+        @media (max-width: 768px) { nav ul { display: none; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <span style="font-weight: 900;">SC.</span>
-        <div>
-            <a href="#about">About</a>
-            <a href="#relaunch">Relaunch</a>
-            <a href="#events">Events</a>
-            <a href="#email">Email</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <div class="logo">Sarah Cliffe</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#product">Product Launch</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#data">Data & Analytics</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <header>
-        <p>Marketing Professional</p>
-        <h1>Sarah<br>Cliffe</h1>
-    </header>
+    <section id="hero">
+        <div class="container">
+            <p class="hero-sub">Marketing Professional</p>
+            <h1>Full-Stack<br>Marketing<br>Executive</h1>
+        </div>
+    </section>
 
     <section id="about">
-        <span class="section-label">01. About Me</span>
-        <h2>Full-Stack Strategy</h2>
-        <div class="case-study-grid">
-            <div>
-                <p>I'm a full-stack Marketing Executive with 4+ years of experience helping a construction industry brand grow their reach, revenue, and reputation. With a 2:1 BA (Hons) in Business Development and Marketing, I focus on data-driven, multi-channel campaigns.</p>
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="row">
+                <div class="col">
+                    <p>Hi, I'm Sarah. [span_3](start_span)I'm a full-stack Marketing Executive with 4+ years of experience helping a construction industry brand grow their reach, revenue, and reputation[span_3](end_span). [span_4](start_span)I hold a 2:1 BA (Hons) in Business Development and Marketing[span_4](end_span).</p>
+                    [span_5](start_span)<p style="margin-top:15px;">My focus is on building data-driven, multi-channel campaigns that connect commercial goals with long-term brand growth[span_5](end_span).</p>
+                </div>
+                <div class="col">
+                    <h3>Hands-on ownership across:</h3>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        [span_6](start_span)<li>Product launches & relaunch strategies[span_6](end_span)</li>
+                        [span_7](start_span)<li>Influencer & trade media partnerships[span_7](end_span)</li>
+                        [span_8](start_span)<li>Industry exhibitions & live events[span_8](end_span)</li>
+                        [span_9](start_span)<li>Email marketing & CRM strategy[span_9](end_span)</li>
+                        [span_10](start_span)<li>Website & digital campaign optimization[span_10](end_span)</li>
+                        [span_11](start_span)<li>Marketing analytics & reporting[span_11](end_span)</li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <div class="skills-tag">GA4</div> <div class="skills-tag">Mailchimp</div>
-                <div class="skills-tag">Adobe</div> <div class="skills-tag">Canva</div>
-                <div class="skills-tag">WIX</div> <div class="skills-tag">SocialPilot</div>
-                <div class="skills-tag">PIM</div> <div class="skills-tag">Excel</div>
-            </div>
+            <h3>Platforms & Tools</h3>
+            <ul class="skill-list">
+                [span_12](start_span)<li>Adobe[span_12](end_span)[span_13](start_span)</li><li>Canva[span_13](end_span)[span_14](start_span)</li><li>Mailchimp[span_14](end_span)[span_15](start_span)</li><li>Excel[span_15](end_span)</li>
+                [span_16](start_span)<li>PIM[span_16](end_span)[span_17](start_span)</li><li>WIX[span_17](end_span)[span_18](start_span)</li><li>Hootsuite[span_18](end_span)[span_19](start_span)</li><li>SocialPilot[span_19](end_span)[span_20](start_span)</li><li>GA4[span_20](end_span)</li>
+            </ul>
         </div>
     </section>
 
-    <section id="relaunch">
-        <span class="section-label">02. Case Study</span>
-        <h2>Product Relaunch: Clamp4Fire</h2>
-        <div class="case-study-grid">
-            <div>
-                <p>Identified an underperforming product and led a relaunch strategy targeting electrical wholesalers and electricians. By leveraging influencer partnerships and trade media, we moved the product from zero sales to a consistent performer.</p>
-                <br>
-                <ul style="list-style: square; padding-left: 20px;">
-                    <li>Partnered with eFIXX for short-form content</li>
-                    <li>Collaborated with Professional Electrician magazine</li>
-                    <li>Launched at UK-wide ELEX trade shows</li>
+    <section id="product">
+        <div class="container">
+            <h2>Case Study: Product Relaunch</h2>
+            <div class="case-block">
+                <h3>Clamp4Fire Relaunch</h3>
+                [span_21](start_span)[span_22](start_span)<p>Identified the product as a strong candidate for relaunch, moving it from zero sales to a consistent Top 20 best-selling product out of 4,000 SKUs[span_21](end_span)[span_22](end_span).</p>
+                <div class="stat-grid">
+                    [span_23](start_span)<div class="stat-item"><span class="stat-val">367k</span><span class="stat-label">Social Views (eFIXX)[span_23](end_span)</span></div>
+                    [span_24](start_span)<div class="stat-item"><span class="stat-val">9.3k</span><span class="stat-label">Long-form Video Views[span_24](end_span)</span></div>
+                    [span_25](start_span)<div class="stat-item"><span class="stat-val">TOP 20</span><span class="stat-label">Best Selling SKU[span_25](end_span)</span></div>
+                </div>
+                <h3>Strategy Pillars</h3>
+                <ul style="padding-left:20px; margin-top:10px;">
+                    [span_26](start_span)<li><strong>Influencer:</strong> eFIXX platform partnership for short-form demos[span_26](end_span).</li>
+                    [span_27](start_span)<li><strong>Media:</strong> Professional Electrician & PEW magazine features[span_27](end_span).</li>
+                    [span_28](start_span)<li><strong>Events:</strong> Product showcases at multiple ELEX trade shows[span_28](end_span).</li>
                 </ul>
             </div>
-            <div>
-                <div class="stat-box">
-                    <span class="stat-number">367,000</span>
-                    <p>Total Video Views</p>
+        </div>
+    </section>
+
+    <section id="events">
+        <div class="container">
+            <h2>Case Study: Event Management</h2>
+            <div class="row">
+                <div class="col">
+                    <h3>CEF LIVE Exhibition</h3>
+                    [span_29](start_span)<p>Managed the exhibition project for the UK's largest electrical trade exhibition for two consecutive years[span_29](end_span).</p>
+                    <ul style="padding-left:20px; margin-top:10px; font-size: 0.9rem;">
+                        [span_30](start_span)<li>Managed external stand design agency[span_30](end_span)</li>
+                        [span_31](start_span)<li>5m x 6m overhead stand with power requirements[span_31](end_span)</li>
+                        [span_32](start_span)<li>Coordinated with national partner teams[span_32](end_span)</li>
+                        [span_33](start_span)<li>Post-event feedback and analysis[span_33](end_span)</li>
+                    </ul>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">TOP 20</span>
-                    <p>Best Seller (out of 4,000 SKUs)</p>
+                <div class="col">
+                    <div class="stat-box" style="border: 1px solid #000; padding: 20px;">
+                        [span_34](start_span)<p><strong>Impact:</strong> Increased brand visibility among thousands of electrical installers and strengthened national distribution partner relationships[span_34](end_span).</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="events" style="background: var(--light);">
-        <span class="section-label">03. Case Study</span>
-        <h2>Event Management: CEF LIVE</h2>
-        <div class="case-study-grid">
-            <div>
-                <div class="stat-box" style="background: #000; color: #fff;">
-                    <p>Managed 5m x 6m overhead exhibition stand design, logistics, and partner coordination for the UK's largest electrical exhibition.</p>
-                </div>
-            </div>
-            <div>
-                <p>Managed the exhibition project from start to finish. My role involved coordinating internal teams and external agencies to deliver a high-impact presence that strengthened distribution partner relationships.</p>
+    <section id="data">
+        <div class="container">
+            <h2>Data & Analytics: Email Marketing</h2>
+            [span_35](start_span)<p>Built a subscriber base of nearly 5,000 verified contacts using Mailchimp[span_35](end_span).</p>
+            
+            <h3>Targeted Audience Performance</h3>
+            <table>
+                <thead>
+                    <tr><th>Segment</th><th>Recipients</th><th>Open Rate</th><th>Click Rate</th></tr>
+                </thead>
+                <tbody>
+                    [span_36](start_span)<tr><td>Targeted Segment A[span_36](end_span)</td><td>1,153</td><td>41.5%</td><td>15.2%</td></tr>
+                    [span_37](start_span)<tr><td>Targeted Segment B[span_37](end_span)</td><td>352</td><td>46.2%</td><td>19.1%</td></tr>
+                    [span_38](start_span)<tr><td>Targeted Segment C[span_38](end_span)</td><td>2,400</td><td>44.5%</td><td>16.4%</td></tr>
+                    [span_39](start_span)<tr><td>Targeted Segment D[span_39](end_span)</td><td>716</td><td>45.2%</td><td>19.4%</td></tr>
+                    [span_40](start_span)<tr><td>High Engagement[span_40](end_span)</td><td>220</td><td>58.1%</td><td>37.3%</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Campaign Benchmarks</h3>
+            <p>Consistently exceeding construction industry standards. [span_41](start_span)[span_42](start_span)Recent campaign high[span_41](end_span)[span_42](end_span):</p>
+            <div class="stat-grid">
+                [span_43](start_span)<div class="stat-item"><span class="stat-val">74.6%</span><span class="stat-label">Peak Open Rate[span_43](end_span)</span></div>
+                [span_44](start_span)<div class="stat-item"><span class="stat-val">37.3%</span><span class="stat-label">Peak Click Rate[span_44](end_span)</span></div>
+                [span_45](start_span)<div class="stat-item"><span class="stat-val">0.05%</span><span class="stat-label">Average Unsub[span_45](end_span)</span></div>
             </div>
         </div>
-    </section>
-
-    <section id="email">
-        <span class="section-label">04. Data & Analytics</span>
-        <h2>Email Marketing Performance</h2>
-        <p>Built and managed a subscriber base of nearly 5,000 verified customers. Performance consistently exceeds construction industry benchmarks.</p>
-        
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Segment</th>
-                    <th>Recipients</th>
-                    <th>Open Rate</th>
-                    <th>Click Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Targeted Customer A</td><td>1,153</td><td>41.5%</td><td>15.2%</td></tr>
-                <tr><td>Targeted Customer B</td><td>716</td><td>45.2%</td><td>19.4%</td></tr>
-                <tr><td>Industry High Engagement</td><td>220</td><td>58.1%</td><td>37.3%</td></tr>
-            </tbody>
-        </table>
     </section>
 
     <footer id="contact">
-        <span class="section-label" style="color: #666;">Contact Information</span>
-        <h2>Available for new opportunities.</h2>
-        <p>Manchester, UK</p><br>
-        <a href="mailto:sarah.cliffe96@gmail.com">sarah.cliffe96@gmail.com</a>
-        <p style="margin-top: 20px;">07796448697</p>
+        <div class="container">
+            <p class="hero-sub" style="color: #888;">Contact Information</p>
+            <br>
+            <a href="mailto:sarah.cliffe96@gmail.com">sarah.cliffe96@gmail.com</a>
+            [span_46](start_span)<p style="margin-top: 15px;">07796448697[span_46](end_span)</p>
+            [span_47](start_span)<p>Manchester, UK[span_47](end_span)</p>
+            <p style="margin-top: 40px; font-size: 0.7rem; color: #444;">&copy; 2026 Sarah Cliffe | Marketing Professional</p>
+        </div>
     </footer>
 
 </body>
