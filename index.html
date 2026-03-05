@@ -1,282 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Marketing Portfolio</title>
-
-<style>
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-background:#f5f7fa;
-color:#333;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
-
-.hero{
-background:#0f172a;
-color:white;
-padding:80px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-opacity:0.85;
-}
-
-.section-title{
-font-size:32px;
-margin-bottom:40px;
-text-align:center;
-}
-
-.case-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.case-card{
-background:white;
-padding:30px;
-border-radius:12px;
-text-decoration:none;
-color:#333;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:all 0.3s ease;
-display:block;
-}
-
-.case-card:hover{
-transform:translateY(-6px);
-box-shadow:0 18px 35px rgba(0,0,0,0.15);
-}
-
-.case-card h3{
-margin-top:0;
-}
-
-.case-section{
-background:white;
-margin-top:60px;
-padding:40px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.case-section h2{
-margin-top:0;
-}
-
-ul{
-line-height:1.8;
-}
-
-footer{
-margin-top:60px;
-padding:30px;
-text-align:center;
-background:#0f172a;
-color:white;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Cliffe | Marketing Professional</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #333333;
+            --light-gray: #f4f4f4;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        header { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 1px solid var(--text); }
+        h1 { font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; }
+        .subtitle { font-size: 1.2rem; color: var(--accent); margin-top: 10px; }
+        
+        section { padding: 80px 10%; border-bottom: 1px solid #eee; }
+        h2 { font-size: 2rem; margin-bottom: 30px; text-transform: uppercase; border-left: 5px solid #000; padding-left: 15px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .card { border: 1px solid #000; padding: 25px; transition: 0.3s; }
+        .card:hover { background: var(--text); color: var(--bg); }
+        .card h3 { margin-bottom: 15px; text-transform: uppercase; }
+        
+        .skills-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
+        .skills-list li { background: var(--light-gray); padding: 8px 15px; border-radius: 4px; font-size: 0.9rem; }
+        
+        footer { padding: 60px 10%; text-align: center; background: #000; color: #fff; }
+        .contact-link { color: #fff; text-decoration: none; display: block; margin: 10px 0; font-size: 1.1rem; }
+        
+        @media (max-width: 768px) { h1 { font-size: 2rem; } section { padding: 40px 5%; } }
+    </style>
 </head>
 <body>
 
-
-<div class="hero">
-
-<h1>Marketing Portfolio</h1>
-
-<p>
-Product Marketing • Campaign Strategy • Trade & Digital Marketing
-</p>
-
-</div>
-
-
-<div class="container">
-
-<h2 class="section-title">Featured Case Studies</h2>
-
-<div class="case-grid">
-
-<a class="case-card" href="#clamp4fire">
-
-<h3>Clamp4Fire Product Relaunch</h3>
-
-<p>
-Revived a stagnant product using influencer marketing, video campaigns and trade show activation.
-</p>
-
-</a>
-
-
-<a class="case-card" href="#fix4fire">
-
-<h3>Fix4Fire Brand Awareness</h3>
-
-<p>
-Developed a multi-channel campaign targeting wholesalers and installers to build product credibility.
-</p>
-
-</a>
-
-
-<a class="case-card" href="#tradeshow">
-
-<h3>Trade Show Product Launch</h3>
-
-<p>
-Designed interactive product displays and demonstrations to increase engagement and lead generation.
-</p>
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="container">
-
-<div id="clamp4fire" class="case-section">
-
-<h2>Clamp4Fire Product Relaunch</h2>
-
-<p><strong>The Challenge</strong></p>
-
-<p>
-Clamp4Fire had been on the market for several years but had gained very little traction despite solving a genuine installation problem for electricians.
-</p>
-
-<p><strong>Strategy</strong></p>
-
-<p>
-I developed a multi-channel marketing strategy designed to educate installers and increase awareness within the electrical industry.
-</p>
-
-<p><strong>Execution</strong></p>
-
-<ul>
-<li>Influencer marketing collaboration with industry content creators</li>
-<li>Product demonstration videos showing real installation scenarios</li>
-<li>Trade show demonstrations with live product testing</li>
-<li>Targeted marketing to wholesalers and contractors</li>
-</ul>
-
-<p><strong>Results</strong></p>
-
-<ul>
-<li>367,000+ video views</li>
-<li>Major increase in product awareness</li>
-<li>Significant improvement in sales performance</li>
-</ul>
-
-</div>
-
-
-
-<div id="fix4fire" class="case-section">
-
-<h2>Fix4Fire Campaign</h2>
-
-<p><strong>The Challenge</strong></p>
-
-<p>
-Fix4Fire was a technically strong product but required clearer positioning within the electrical safety market.
-</p>
-
-<p><strong>Strategy</strong></p>
-
-<p>
-Focus messaging on compliance, safety, and installer convenience while leveraging both digital and trade channels.
-</p>
-
-<p><strong>Execution</strong></p>
-
-<ul>
-<li>Educational product content explaining fire safety regulations</li>
-<li>Distributor marketing support</li>
-<li>Installation demonstrations and product comparisons</li>
-</ul>
-
-<p><strong>Results</strong></p>
-
-<ul>
-<li>Improved installer awareness</li>
-<li>Increased distributor engagement</li>
-<li>Stronger product positioning within the range</li>
-</ul>
-
-</div>
-
-
-
-<div id="tradeshow" class="case-section">
-
-<h2>Trade Show Product Display Strategy</h2>
-
-<p><strong>The Challenge</strong></p>
-
-<p>
-Trade show displays often fail to communicate product value quickly enough to busy attendees.
-</p>
-
-<p><strong>Strategy</strong></p>
-
-<p>
-Design visually engaging display boxes that clearly demonstrate the installation and benefits of the product.
-</p>
-
-<p><strong>Execution</strong></p>
-
-<ul>
-<li>Created modular product display boxes</li>
-<li>Used real installation examples</li>
-<li>Designed layouts highlighting product benefits</li>
-</ul>
-
-<p><strong>Results</strong></p>
-
-<ul>
-<li>Improved engagement at trade shows</li>
-<li>Clearer product understanding for visitors</li>
-<li>Increased sales conversations during events</li>
-</ul>
-
-</div>
-
-</div>
-
-
-<footer>
-
-<p>Marketing Portfolio</p>
-
-<p>Built with GitHub Pages</p>
-
-</footer>
+    <header>
+        <h1>Sarah Cliffe</h1>
+        <p class="subtitle">Marketing Professional</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        [span_1](start_span)<p>I am a full-stack Marketing Executive with 4+ years of experience helping brands in the construction industry grow their reach, revenue, and reputation.[span_1](end_span) [span_2](start_span)I hold a 2:1 BA (Hons) in Business Development and Marketing.[span_2](end_span)</p>
+        <br>
+        <h3>Core Skills</h3>
+        <ul class="skills-list">
+            <li>Product Launches</li><li>Influencer Partnerships</li><li>Event Management</li>
+            [span_3](start_span)<li>Email Marketing</li><li>GA4</li><li>Mailchimp</li><li>Adobe</li><li>Canva</li>[span_3](end_span)
+        </ul>
+    </section>
+
+    <section id="work">
+        <h2>Case Studies</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Product Relaunch: Clamp4Fire</h3>
+                [span_4](start_span)[span_5](start_span)<p>Transformed an inactive product into a Top 20 best-seller out of 4,000 SKUs using influencer partnerships and trade media content.[span_4](end_span)[span_5](end_span)</p>
+            </div>
+            <div class="card">
+                <h3>Event Management: CEF LIVE</h3>
+                [span_6](start_span)[span_7](start_span)<p>Managed the UK's largest electrical trade exhibition from start to finish, coordinating internal teams and design agencies.[span_6](end_span)[span_7](end_span)</p>
+            </div>
+            <div class="card">
+                <h3>Email Strategy</h3>
+                [span_8](start_span)<p>Managed a database of 5,000 active customers with campaign performance consistently exceeding industry benchmarks.[span_8](end_span)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        [span_9](start_span)<p>Based in Manchester, UK[span_9](end_span)</p>
+        <a href="mailto:sarah.cliffe96@gmail.com" class="contact-link">sarah.cliffe96@gmail.com</a>
+        [span_10](start_span)<p>07796448697[span_10](end_span)</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sarah Cliffe. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
+
